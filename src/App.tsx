@@ -175,7 +175,6 @@ export default function Home() {
               <div className="w-full aspect-video overflow-hidden">
                 <img
                   src={project.img}
-                  alt={`Imagem do projeto ${project.title}`}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
