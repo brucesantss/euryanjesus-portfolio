@@ -15,6 +15,7 @@ import { motion } from "framer-motion"
 import { ProjectsData } from "./data/Projects"
 
 import { useForm, ValidationError } from '@formspree/react'
+import ReflexGame from "./ReflexGame"
 
 
 
@@ -215,6 +216,12 @@ export default function Home() {
           </motion.div>
         ))}
       </section>
+
+
+      <section id="contato" className="min-h-screen px-4 py-12 flex items-center justify-center text-center">
+        <ReflexGame/>
+      </section>
+
 
       <section id="contato" className="min-h-screen px-4 py-12 flex items-center justify-center text-center">
         <motion.form
