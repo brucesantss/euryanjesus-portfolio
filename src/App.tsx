@@ -1,17 +1,18 @@
 'use client'
 
+import { GithubIcon, Menu, YoutubeIcon, ChevronDown } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { GithubIcon, Menu, YoutubeIcon } from "lucide-react"
-import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "./components/ui/card"
 import { Badge } from "./components/ui/badge"
-
-import { ProjectsData } from "./data/Projects"
 import { Label } from "./components/ui/label"
 import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
+
+import { motion } from "framer-motion"
+
+import { ProjectsData } from "./data/Projects"
 
 import { useForm, ValidationError } from '@formspree/react'
 
@@ -136,7 +137,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
         >
-          Quem sou eu?
+          Quem sou?
         </motion.h3>
 
         <motion.p
@@ -156,7 +157,7 @@ export default function Home() {
             <li>FrontEnd: <span className="font-semibold">ReactJS, TailwindCSS</span></li>
             <li>Banco de dados: <span className="font-semibold">MySQL, PostgreSQL, MongoDB</span></li>
             <li>Infraestrutura: <span className="font-semibold">Docker, AWS, Redis</span></li>
-            <li>Metodoligias & Ferramentas: <span className="font-semibold">Scrum, Kanban, WebSocket</span> </li>
+            <li>Métodologias & Ferramentas: <span className="font-semibold">Scrum, Kanban, WebSocket</span> </li>
           </ul>
         </motion.div>
       </section>
@@ -169,7 +170,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: index * 0.4 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <Card className="w-full max-w-[700px] mx-auto flex flex-col overflow-hidden rounded-2xl shadow-md">
               <div className="w-full aspect-video overflow-hidden">
@@ -215,7 +216,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section id="contato" className="min-h-screen px-4 py-12 flex items-center justify-center">
+      <section id="contato" className="min-h-screen px-4 py-12 flex items-center justify-center text-center">
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: -40 }}
@@ -225,6 +226,7 @@ export default function Home() {
           className="w-full max-w-lg flex flex-col gap-6"
         >
           <h1 className="text-4xl font-semibold text-center">Entre em contato comigo :)</h1>
+          <p className="font-semibold italic text-sm text-muted-foreground">Faça uma proposta!</p>
 
           <div className="flex flex-col gap-2">
             <Label htmlFor="name">Nome Completo</Label>
@@ -240,7 +242,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-2">
             <Label htmlFor="message">Mensagem</Label>
-            <Textarea id="message" name="message" placeholder="Digite sua mensagem" required />
+            <Textarea id="message" name="message" placeholder="Quero fazer um projeto, esse é o escopo..." required />
             <ValidationError prefix="Mensagem" field="message" errors={state.errors} />
           </div>
 
